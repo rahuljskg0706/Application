@@ -20,14 +20,19 @@ class Shoe  implements Serializable{
 public class Shoedet {
 
     private static final String filepath="sc.ser";
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         Shoedet shobj = new Shoedet();
-        ArrayList<Shoe> sdo = shoeAdd();
-        shobj.WriteObjectToFile(sdo);
         ArrayList<Shoe> ad = (ArrayList) shobj.ReadObjectFromFile(filepath);
-        System.out.println(ad);
-        for(Shoe a: ad){
+
+        ArrayList<Shoe> sdo = shoeAdd(ad);
+
+
+        shobj.WriteObjectToFile(sdo);
+        ArrayList<Shoe> ads = (ArrayList) shobj.ReadObjectFromFile(filepath);
+
+        System.out.println(ads);
+        for(Shoe a: ads){
             System.out.println(a.model_id);
         }
 
@@ -35,7 +40,7 @@ public class Shoedet {
 
 
     }
-    public static ArrayList  shoeAdd(){
+    public static ArrayList<Shoe>  shoeAdd(ArrayList<Shoe> ar) throws IOException, ClassNotFoundException {
        /* System.out.println("Enter model id");
         Scanner sc = new Scanner((System.in));
         int mid = sc.nextInt();
@@ -43,10 +48,12 @@ public class Shoedet {
         String  mname = sc.next();
         System.out.println("Enter model quantity");
         int mquantity = sc.nextInt();*/
-        Shoe a = new Shoe(1, "nike", 30);
-        Shoe b = new Shoe(2, "puma", 30);
+        Shoe a = new Shoe(15, "nike", 30);
+        Shoe b = new Shoe(47, "puma", 30);
 
-        ArrayList<Shoe> sh = new ArrayList<>();
+
+
+        ArrayList<Shoe> sh = ar;
         sh.add(a);
         sh.add(b);
 
@@ -64,6 +71,7 @@ public class Shoedet {
     public void WriteObjectToFile(Object serObj) {
 
         try {
+
 
             FileOutputStream fileOut = new FileOutputStream(filepath);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
