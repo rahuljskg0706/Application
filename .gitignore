@@ -1,0 +1,9 @@
+# GitIgnore file
+SampleApplication/.idea/encodings.xml
+SampleApplication/.idea/misc.xml
+SampleApplication/.idea/modules.xml
+SampleApplication/.idea/workspace.xml
+SampleApplication/SampleApplication.iml
+SampleApplication/.idea/vcs.xml
+SampleApplication/.idea/
+SampleApplication/out/
