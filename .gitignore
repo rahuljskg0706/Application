@@ -7,3 +7,9 @@ SampleApplication/SampleApplication.iml
 SampleApplication/.idea/vcs.xml
 SampleApplication/.idea/
 SampleApplication/out/
+FileIO/.idea/
+FileIO/FileIO.iml
+FileIO/out/
+FileIO/src/ObjectExample.java
+FileIO/src/sc.ser
+FileIO/src/sc.txt
